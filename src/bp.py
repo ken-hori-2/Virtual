@@ -459,7 +459,7 @@ class Algorithm_bp():
 
                     "----- Add -----"
                     # test.show(self.state, self.map)
-                    self.test.show(self.state, self.map, self.backed, {})
+                    self.test.show(self.state, self.map, self.backed, {},     self.TRIGAR)
 
                     "----- Add 0203 -----"
                     # self.total_stress = 0
@@ -499,7 +499,7 @@ class Algorithm_bp():
 
                 "----- Add -----"
                 # test.show(self.state, self.map)
-                self.test.show(self.state, self.map, self.backed, {})
+                self.test.show(self.state, self.map, self.backed, {},     self.TRIGAR)
 
             print(f"Total Stress:{self.total_stress}")
             print("TRIGAR : {}".format(self.TRIGAR))
