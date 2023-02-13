@@ -85,7 +85,9 @@ class Algorithm_exp():
 
                 "----- Add -----"
                 # test.show(self.state, self.map)
-                self.test.show(self.state, self.map, {}, DIR)
+
+                self.TRIGAR = True
+                self.test.show(self.state, self.map, {}, DIR,     self.TRIGAR)
 
 
 
@@ -94,7 +96,7 @@ class Algorithm_exp():
                 self.threshold()
 
     def threshold(self):
-        self.TRIGAR = True
+        # self.TRIGAR = True # 上に移動
         print("=================")
         print("FULL ! MAX! 🔙⛔️", self.retry_num, self.rrr)
         print("=================")
@@ -351,7 +353,7 @@ class Algorithm_exp():
 
                         "----- Add -----"
                         # test.show(self.state, self.map)
-                        self.test.show(self.state, self.map, {}, DIR)
+                        self.test.show(self.state, self.map, {}, DIR,     self.TRIGAR)
                         
                         break
 
@@ -396,7 +398,7 @@ class Algorithm_exp():
                 
                 "----- Add -----"
                 # test.show(self.state, self.map)
-                self.test.show(self.state, self.map, {}, DIR)
+                self.test.show(self.state, self.map, {}, DIR,     self.TRIGAR)
                 
                 
                 
@@ -405,7 +407,7 @@ class Algorithm_exp():
 
                 "----- Add -----"
                 # test.show(self.state, self.map)
-                self.test.show(self.state, self.map, {}, DIR)
+                self.test.show(self.state, self.map, {}, DIR,     self.TRIGAR)
 
                 continue
 
@@ -426,7 +428,7 @@ class Algorithm_exp():
 
             "----- Add -----"
             # test.show(self.state, self.map)
-            self.test.show(self.state, self.map, {}, DIR)
+            self.test.show(self.state, self.map, {}, DIR,     self.TRIGAR)
             if self.Backed_just_before:
                 __a = self.n_m[self.state.row][self.state.column] # -> ここは戻る場所決定で決めた場所を代入というか戻った後はこの関数に入るので現在地を代入
                 print(f"🤖 State:{self.state}")
@@ -461,7 +463,7 @@ class Algorithm_exp():
                 self.lost_state()
                 "----- Add -----"
                 # test.show(self.state, self.map) # here
-                self.test.show(self.state, self.map, {}, DIR)
+                self.test.show(self.state, self.map, {}, DIR,     self.TRIGAR)
                 
             print("All explore : {}".format(self.All_explore))
             if self.All_explore:

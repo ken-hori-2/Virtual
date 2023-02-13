@@ -862,7 +862,7 @@ class Algorithm_advance():
 
                             "----- Add -----"
                             # test.show(self.state, self.map)
-                            self.test.show(self.state, self.map, {}, self.DIR)
+                            self.test.show(self.state, self.map, {}, self.DIR,     self.TRIGAR)
 
 
                             break
@@ -902,7 +902,7 @@ class Algorithm_advance():
 
                             "----- Add -----"
                             # test.show(self.state, self.map)
-                            self.test.show(self.state, self.map, {}, self.DIR)
+                            self.test.show(self.state, self.map, {}, self.DIR,     self.TRIGAR)
                             
                             break
 
@@ -922,7 +922,7 @@ class Algorithm_advance():
 
                         "----- Add -----"
                         # test.show(self.state, self.map)
-                        self.test.show(self.state, self.map, {}, self.DIR)
+                        self.test.show(self.state, self.map, {}, self.DIR,     self.TRIGAR)
                         
 
                         break
@@ -938,7 +938,7 @@ class Algorithm_advance():
 
             "----- Add -----"
             # test.show(self.state, self.map)
-            self.test.show(self.state, self.map, {}, self.DIR)
+            self.test.show(self.state, self.map, {}, self.DIR,     self.TRIGAR)
 
             "基準距離, 割合の可視化"
             self.standard_list.append(self.test_s)

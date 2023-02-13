@@ -10,7 +10,7 @@ class DEMO():
         self.BP = {}
 
     
-    def show(self, state, map, Backed, DIR):
+    def show(self, state, map, Backed, DIR, trigar):
         size = -self.env.row_length
         # fig = plt.figure(figsize=(self.env.row_length, self.env.column_length))
         fig = plt.figure(figsize=(5, 5))
@@ -118,10 +118,12 @@ class DEMO():
                 pass
             else:
                 if self.env.NODELIST[state.row][state.column] in Node or self.env.NODELIST[state.row][state.column] == "x":
-                    # plt.plot(state.column+(-DIR[2]+DIR[3])*2/max_dir, -state.row+(DIR[0]-DIR[1])*2/max_dir, "*y", markersize=10,     label = "Estimated") # , alpha = 0.5)
-                    # plt.plot([state.column, state.column+(-DIR[2]+DIR[3])*2/max_dir], [-state.row, -state.row+(DIR[0]-DIR[1])*2/max_dir], linestyle = "--", color='y', alpha = 0.5)
-                    plt.plot(state.column+(-DIR[2]+DIR[3])*2/max_dir, -state.row+(DIR[0]-DIR[1])*2/max_dir, marker = "*", color = "orange", markersize=10,     label = "Estimated") # , alpha = 0.5)
-                    plt.plot([state.column, state.column+(-DIR[2]+DIR[3])*2/max_dir], [-state.row, -state.row+(DIR[0]-DIR[1])*2/max_dir], linestyle = "--", color='orange', alpha = 0.5)
+
+                    if not trigar and not self.env.NODELIST[state.row][state.column] == "g":
+                        # plt.plot(state.column+(-DIR[2]+DIR[3])*2/max_dir, -state.row+(DIR[0]-DIR[1])*2/max_dir, "*y", markersize=10,     label = "Estimated") # , alpha = 0.5)
+                        # plt.plot([state.column, state.column+(-DIR[2]+DIR[3])*2/max_dir], [-state.row, -state.row+(DIR[0]-DIR[1])*2/max_dir], linestyle = "--", color='y', alpha = 0.5)
+                        plt.plot(state.column+(-DIR[2]+DIR[3])*2/max_dir, -state.row+(DIR[0]-DIR[1])*2/max_dir, marker = "*", color = "orange", markersize=10,     label = "Estimated") # , alpha = 0.5)
+                        plt.plot([state.column, state.column+(-DIR[2]+DIR[3])*2/max_dir], [-state.row, -state.row+(DIR[0]-DIR[1])*2/max_dir], linestyle = "--", color='orange', alpha = 0.5)
         except:
             pass
 
@@ -183,13 +185,15 @@ class DEMO():
         # fig = plt.figure(figsize=(3, 3))
 
         # viz.plot()
-        viz.plot.line(subplots=True, layout=(3, 1), grid=False, figsize=(5+2, 5), style=['-', '--', '-.', ':']) # , sharey=True) # 2, 2))
+        # viz.plot.line(subplots=True, layout=(3, 1), grid=False, figsize=(5+2, 5), style=['-', '--', '-.', ':']) # , sharey=True) # 2, 2))
+        viz.plot.line(subplots=True, layout=(3, 1), grid=False, figsize=(5, 5), style=['-', '--', '-.', ':'])
 
         plt.show()
 
     def bp_viz(self, Attribute):
         
         # Attribute[:5].plot.bar()
-        Attribute.plot.bar(subplots=True, layout=(1, 3), grid=False, figsize=(5+2, 5)) # , sharey=True) # 2, 2))
+        # Attribute.plot.bar(subplots=True, layout=(1, 3), grid=False, figsize=(5+2, 5)) # , sharey=True) # 2, 2))
+        Attribute.plot.bar(subplots=True, layout=(1, 3), grid=False, figsize=(5, 5))
         # self.Attribute.plot.bar()
         plt.show()
